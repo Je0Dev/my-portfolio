@@ -12,6 +12,11 @@ import Footer from "@/components/Footer";
 import { Timeline } from '@/components/Timeline';
 import { SpotlightSection } from '@/components/SpotlightSection'; 
 import { BentoGrid } from '@/components/BentoGrid'; 
+import { LiquidNav } from '@/components/LiquidNav';
+import { CodeNode } from 'three/webgpu';
+
+
+
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -25,15 +30,19 @@ export default function Home() {
 
 
   return (
+    
     <motion.main
       style={{ backgroundColor }} // Apply the dynamic background color here
       className="transition-colors duration-300"
-    >
+    > 
+    
+      <LiquidNav />
       <Navbar />
       <Hero />
       <About />
       <BentoGrid />
       <Timeline /> 
+      
       <SpotlightSection> {/* Wrap the Projects component */}
         <Projects />
       </SpotlightSection>
