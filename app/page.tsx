@@ -10,17 +10,16 @@ import Projects from "@/components/Projects";
 import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
 import { Timeline } from '@/components/Timeline';
-import { SpotlightSection } from '@/components/SpotlightSection'; 
-import { BentoGrid } from '@/components/BentoGrid'; 
+import { SpotlightSection } from '@/components/SpotlightSection';
+import { BentoGrid } from '@/components/BentoGrid';
 import { LiquidNav } from '@/components/LiquidNav';
-import { CodeNode } from 'three/webgpu';
 
 
 
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  
+
   // Define a color gradient that changes based on scroll position
   const backgroundColor = useTransform(
     scrollYProgress,
@@ -30,23 +29,24 @@ export default function Home() {
 
 
   return (
-    
+
     <motion.main
       style={{ backgroundColor }} // Apply the dynamic background color here
       className="transition-colors duration-300"
-    > 
-    
-      <LiquidNav />
+    >
+
+<LiquidNav />
       <Navbar />
       <Hero />
       <About />
       <BentoGrid />
-      <Timeline /> 
-      
+      <Timeline />
       <SpotlightSection> {/* Wrap the Projects component */}
         <Projects />
       </SpotlightSection>
-      <Blog />
+      <SpotlightSection> {/* Wrap the Blog component */}
+        <Blog />
+      </SpotlightSection>
       <Footer />
     </motion.main>
   );
