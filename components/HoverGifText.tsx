@@ -10,7 +10,7 @@ type HoverGifTextProps = {
 
 const HoverGifText = ({ children, gifUrl }: HoverGifTextProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 0, y:0});
 
   const handleMouseMove = (e: React.MouseEvent<HTMLSpanElement>) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -27,18 +27,18 @@ const HoverGifText = ({ children, gifUrl }: HoverGifTextProps) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
-        className="relative inline-block cursor-pointer text-cyan-400 underline decoration-dotted"
+        className="relative inline-block cursor-pointer text-cyan-300 hover:text-red-400 underline transition-colors duration-300"
       >
         {children}
       </span>
 
       <motion.div
         className="fixed top-0 left-0 w-48 h-48 pointer-events-none z-[9999]"
-        style={{ x: position.x - 96, y: position.y - 150 }} // Offset to center the gif on the cursor
+        style={{ x: position.x - 110, y: position.y - 220 }} // Offset to center the gif on the cursor
         variants={gifVariants}
         animate={isHovered ? 'visible' : 'hidden'}
       >
-        <img src={gifUrl} alt="hover gif" className="w-full h-full object-cover rounded-lg shadow-2xl" />
+        <img src={gifUrl} alt="hover gif" className="" />
       </motion.div>
     </>
   );

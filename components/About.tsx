@@ -35,9 +35,22 @@ const About = () => {
               <p className="text-lg mb-6 text-gray-300">
                 Hello! I'm a full-stack developer specializing in creating modern, responsive, and user-friendly web applications. My passion lies in turning complex problems into beautiful, intuitive designs.
               </p>
-              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">My Skills</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
-                {/* ... (Your skills mapping code remains the same) */}
+              <p className="text-lg mb-6 text-gray-300">
+                With a strong foundation in React, Next.js, Node.js, and TypeScript, I have a proven track record of delivering high-quality, efficient solutions that meet the needs of my clients.
+              </p>
+              <p className="text-lg mb-6 text-gray-300">
+                I am dedicated to staying up-to-date with the latest industry trends and technologies, allowing me to deliver cutting-edge solutions that exceed expectations.
+              </p>
+              <p className="text-lg mb-6 text-gray-300">
+                I am excited to work with you to bring your ideas to life and help you achieve your goals.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {skills.map((skill, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    {skill.icon}
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 const BentoItem = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.02, transition: { type: 'spring', stiffness: 300 } }}
+      whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
+      whileTap={{ scale: 0.85,transformOrigin: 'center' }}
       className={`relative p-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg shadow-lg ${className}`}
     >
       {children}
@@ -24,19 +25,11 @@ export const BentoGrid = () => {
         </BentoItem>
         <BentoItem>
           <h3 className="font-bold">Projects</h3>
-          <p className="text-4xl">15+</p>
+          <p className="text-4xl">5+</p>
         </BentoItem>
         <BentoItem>
-          <h3 className="font-bold">Years Experience</h3>
-          <p className="text-4xl">3</p>
-        </BentoItem>
-        <BentoItem>
-          <h3 className="font-bold">Location</h3>
-          <p className="text-lg">Athens, Greece</p>
-        </BentoItem>
-        <BentoItem className="md:col-span-2">
-          <h3 className="font-bold">Main Tech</h3>
-          <p className="text-lg">React, Next.js, Three.js</p>
+          <h3 className="font-bold">Skills</h3>
+          <p>Software & hardware</p>
         </BentoItem>
       </div>
     </section>

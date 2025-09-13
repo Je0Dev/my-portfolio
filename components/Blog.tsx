@@ -18,7 +18,14 @@ const posts = [
     excerpt: 'Exploring how React Three Fiber is changing the game for creating immersive web experiences without sacrificing performance.',
     tags: ['Three.js', 'Design', 'Frontend'],
   },
+  {
+    title: 'The Future of Web Development: Exploring the Next Generation of Technologies',
+    date: 'July 15, 2025',
+    excerpt: 'A look at the exciting advancements in web development that are shaping the future of the internet.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+  }
 ];
+
 
 const Blog = () => {
   return (
@@ -31,18 +38,21 @@ const Blog = () => {
           {posts.map((post, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg shadow-lg group hover:bg-gray-800 transition-colors duration-300"
-              initial={{ opacity: 0, y: 50 }}
+              className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg shadow-lg group hover:bg-blue-800 transition-colors duration-300"
+              initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.7 }}
+              whileHover={{ scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
+              whileTap={{ scale: 0.95 }}
+              whileFocus={{ scale: 1.05, transition: { type: 'spring', stiffness: 300 } }}
             >
               <h3 className="text-2xl font-bold text-cyan-400 mb-2 group-hover:underline">
                 {post.title}
               </h3>
               <p className="text-sm text-gray-400 mb-3">{post.date}</p>
               <p className="text-gray-300 mb-4">{post.excerpt}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1">
                 {post.tags.map(tag => (
                   <span key={tag} className="bg-gray-700 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">
                     {tag}

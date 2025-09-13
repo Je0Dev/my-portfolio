@@ -7,11 +7,11 @@ import HoverGifText from './HoverGifText';
 
 const Hero = () => {
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 text-white"
     >
-      <motion.div 
+      <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -26,12 +26,12 @@ const Hero = () => {
           {' '} and interactive web experiences.
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-10">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">
             Hi, I'm Your Name
           </span>
         </h1>
-        
+
         <TypeAnimation
           sequence={[
             'A Passionate Web Developer',
@@ -47,8 +47,8 @@ const Hero = () => {
           className="text-lg md:text-2xl mb-8 text-gray-300"
         />
 
-        <motion.a 
-          href="#projects" 
+        <motion.a
+          href="#projects"
           className="bg-cyan-500 text-white font-bold py-3 px-8 rounded-full inline-block"
           whileHover={{ scale: 1.1, boxShadow: "0px 0px 8px rgb(56,189,248)" }}
           transition={{ type: "spring", stiffness: 300 }}

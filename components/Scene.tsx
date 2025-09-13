@@ -5,10 +5,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Torus } from '@react-three/drei';
 import { useScroll } from 'framer-motion';
 import * as THREE from 'three';
+import { MdDirectionsWalk } from 'react-icons/md';
 
 const Model = () => {
   const meshRef = useRef<THREE.Mesh>(null!);
-  
+
   // Use Framer Motion's useScroll to get scroll progress
   const { scrollYProgress } = useScroll();
 
@@ -16,13 +17,16 @@ const Model = () => {
   useFrame(() => {
     // scrollYProgress.get() returns a value from 0 to 1
     // We'll link this to the mesh's rotation
-    meshRef.current.rotation.x = scrollYProgress.get() * Math.PI * 2;
-    meshRef.current.rotation.y = scrollYProgress.get() * Math.PI * 1.5;
+    meshRef.current.rotation.x = scrollYProgress.get() * Math.PI * 10;
+    meshRef.current.rotation.y = scrollYProgress.get() * Math.PI * 20;
+    meshRef.current.rotation.z = scrollYProgress.get() * Math.PI * 10;
   });
 
   return (
     <Torus ref={meshRef} args={[1.5, 0.4, 32, 100]}>
-      <meshStandardMaterial color="#00ffff" roughness={0.3} />
+        <Torus args={[2, 0.2, 40, 50]} />
+      <meshStandardMaterial color="#00ffff" roughness={0} />
+      <meshToonMaterial color="#00ffff" />
     </Torus>
   );
 };
@@ -30,8 +34,8 @@ const Model = () => {
 const Scene = () => {
   return (
     <Canvas>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[2, 5, 2]} intensity={1} />
+      <ambientLight intensity={1} />
+      <directionalLight position={[1, 4, 3]} intensity={0.5} />
       <Model />
     </Canvas>
   );

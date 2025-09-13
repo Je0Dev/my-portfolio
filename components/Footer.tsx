@@ -2,21 +2,19 @@
 'use client';
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaDribbble, FaEnvelope } from 'react-icons/fa';
-import { MagneticElement } from './MagneticElement'; 
+import { MagneticElement } from './MagneticElement';
+import { FaEnvelopeCircleCheck } from 'react-icons/fa6';
 
 // Array of social media profiles
 const socialLinks = [
   { name: 'GitHub', icon: FaGithub, url: '#' },
+  {name: 'Twitter', icon: FaTwitter, url: '#' },
   { name: 'LinkedIn', icon: FaLinkedin, url: '#' },
-  { name: 'Twitter', icon: FaTwitter, url: '#' },
-  { name: 'Instagram', icon: FaInstagram, url: '#' },
-  { name: 'Dribbble', icon: FaDribbble, url: '#' },
+  { name: 'Email', icon: FaEnvelopeCircleCheck, url: '#' },
 ];
 
 const Footer = () => {
-  // We're keeping the form from the previous step. 
-  // If you removed it, you can simplify this component.
-  // ... (keep your handleSubmit and useState logic here if you have the form)
+
 
   return (
     <footer id="contact" className="bg-black/30 backdrop-blur-sm py-12">
@@ -25,8 +23,8 @@ const Footer = () => {
         <p className="max-w-md mx-auto mb-8 text-gray-400">
           Have a project in mind or just want to say hi? Feel free to reach out.
         </p>
-        <a 
-          href="mailto:your.email@example.com" 
+        <a
+          href="mailto:your.email@example.com"
           className="bg-cyan-500 text-white font-bold py-3 px-8 rounded-full hover:bg-cyan-600 transition-all duration-300 inline-flex items-center gap-2"
         >
           <FaEnvelope /> Say Hello
