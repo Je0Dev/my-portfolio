@@ -1,20 +1,19 @@
-// src/app/page.tsx
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Blog from "@/components/Blog";
-import Footer from "@/components/Footer";
-import { Timeline } from '@/components/Timeline';
-import { SpotlightSection } from '@/components/SpotlightSection';
-import { BentoGrid } from '@/components/BentoGrid';
 import { LiquidNav } from '@/components/LiquidNav';
 
-
+// Dynamically import heavy components
+const About = dynamic(() => import("@/components/About"));
+const Projects = dynamic(() => import("@/components/Projects"));
+const Blog = dynamic(() => import("@/components/Blog"));
+const Footer = dynamic(() => import("@/components/Footer"));
+const Timeline = dynamic(() => import('@/components/Timeline').then(mod => mod.Timeline));
+const SpotlightSection = dynamic(() => import('@/components/SpotlightSection').then(mod => mod.SpotlightSection));
+const BentoGrid = dynamic(() => import('@/components/BentoGrid').then(mod => mod.BentoGrid));
 
 
 export default function Home() {
